@@ -1,79 +1,90 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# iSchedule
 
-# Getting Started
+iSchedule é um aplicativo de agendamento de tarefas desenvolvido com React Native. O objetivo deste aplicativo é fornecer uma interface intuitiva para listar, adicionar, editar, apagar e marcar tarefas como concluídas. Os dados são armazenados localmente usando o AsyncStorage.
 
-> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Estrutura do Projeto
 
-## Step 1: Start the Metro Server
+A estrutura do projeto está organizada da seguinte maneira:
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- **`src/`**: Contém o código-fonte do aplicativo.
+  - **`assets/`**: Imagens, ícones e outros recursos estáticos.
+  - **`components/`**: Componentes reutilizáveis, como BottomSheet e Modal.
+  - **`screens/`**: Telas principais do aplicativo, como a tela de tarefas agendadas e concluídas.
+  - **`services/`**: Serviços para manipulação de dados, incluindo persistência usando AsyncStorage.
+  - **`hooks/`**: Hooks personalizados para encapsular lógica de estado e operações.
+  - **`utils/`**: Funções utilitárias e constantes.
+  - **`navigation/`**: Configuração de navegação, incluindo o bottom navigator.
+  - **`context/`**: Contextos para gerenciamento de estado global.
+  - **`types/`**: Definições de tipos TypeScript, se estiver usando.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Tecnologias Usadas
 
-```bash
-# using npm
-npm start
+- **React Native**: Framework para desenvolvimento de aplicativos móveis.
+- **React Navigation**: Biblioteca para navegação entre telas e gerenciamento de navegação.
+- **React Native Bottom Sheet**: Biblioteca para criar bottom sheets interativos.
+- **AsyncStorage**: Biblioteca para armazenamento local persistente de dados.
+- **TypeScript**: Superset do JavaScript para uma melhor tipagem e desenvolvimento mais seguro.
+- **Jest**: Framework de testes para garantir a qualidade do código.
+- **ESLint e Prettier**: Ferramentas para linting e formatação de código.
 
-# OR using Yarn
-yarn start
-```
+## Comandos Disponíveis
 
-## Step 2: Start your Application
+- **`yarn android`**: Inicia o aplicativo no emulador ou dispositivo Android.
+- **`yarn ios`**: Inicia o aplicativo no simulador iOS.
+- **`yarn lint`**: Executa o linting do código fonte.
+- **`yarn start`**: Inicia o servidor de desenvolvimento React Native.
+- **`yarn test`**: Executa os testes com Jest.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Configuração Inicial
 
-### For Android
+1. **Instalar Dependências**:
 
-```bash
-# using npm
-npm run android
+   Após clonar o repositório, instale as dependências do projeto:
 
-# OR using Yarn
-yarn android
-```
+   ```bash
+   yarn install
+   ```
 
-### For iOS
+2. **Configuração do Ambiente**:
 
-```bash
-# using npm
-npm run ios
+   Configure as variáveis de ambiente e as ferramentas necessárias, como o JDK e o Android SDK.
 
-# OR using Yarn
-yarn ios
-```
+3. **Executar o Aplicativo**:
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+   Para iniciar o aplicativo no emulador ou dispositivo, use os comandos:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+   ```bash
+   yarn android
+   ```
 
-## Step 3: Modifying your App
+   ou
 
-Now that you have successfully run the app, let's modify it.
+   ```bash
+   yarn ios
+   ```
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## Estrutura de Pastas
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+- **`src/assets/`**: Recursos estáticos, como imagens e ícones.
+- **`src/components/`**: Componentes reutilizáveis do aplicativo.
+- **`src/screens/`**: Telas principais do aplicativo.
+- **`src/services/`**: Manipulação de dados e serviços.
+- **`src/hooks/`**: Hooks personalizados.
+- **`src/utils/`**: Funções e constantes utilitárias.
+- **`src/navigation/`**: Configuração de navegação.
+- **`src/context/`**: Contextos para gerenciamento de estado.
+- **`src/types/`**: Definições de tipos TypeScript.
 
-## Congratulations! :tada:
+## Contribuindo
 
-You've successfully run and modified your React Native App. :partying_face:
+Se você deseja contribuir para o projeto, siga estas etapas:
 
-### Now what?
+1. Faça um fork do repositório.
+2. Crie uma branch para suas alterações (`git checkout -b feature/your-feature`).
+3. Faça commit das suas alterações (`git commit -am 'Add new feature'`).
+4. Faça push para a branch (`git push origin feature/your-feature`).
+5. Crie um Pull Request.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+## Licença
 
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Este projeto está licenciado sob a [MIT License](LICENSE).
