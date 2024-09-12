@@ -1,3 +1,4 @@
+import { useBottomSheet } from '@components/BottomSheet/context'
 import React from 'react'
 import { View, Text, Button, FlatList } from 'react-native'
 
@@ -7,10 +8,11 @@ import { ScheduleProvider, useSchedule } from './context'
 import styles from './styles'
 
 const ScheduledTasksScreen: React.FC = () => {
-  const { currentTasks, removeTask } = useSchedule()
+  const { currentTasks } = useSchedule()
+  const { openBottomSheet } = useBottomSheet()
 
   const handleRemoveTask = (task: Task) => {
-    removeTask(task.id)
+    openBottomSheet('remove', task.id)
   }
 
   return (
@@ -23,6 +25,7 @@ const ScheduledTasksScreen: React.FC = () => {
         renderItem={({ item }) => (
           <View style={styles.taskItem}>
             <Text style={styles.taskTitle}>{item.title}</Text>
+            <Text style={styles.taskTitle}>{item.description}</Text>
             <Button
               title="Remove Task"
               onPress={() => handleRemoveTask(item)}

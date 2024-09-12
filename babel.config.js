@@ -19,6 +19,7 @@ module.exports = {
           '@views': './src/views'
         }
       }
-    ]
+    ],
+    'react-native-reanimated/plugin'
   ]
 }

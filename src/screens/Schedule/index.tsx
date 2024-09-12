@@ -1,4 +1,4 @@
-import { useBottomSheetContext } from '@components/BottomSheet/context'
+import { useBottomSheet } from '@components/BottomSheet/context'
 import React from 'react'
 import { View, Text, Button, FlatList } from 'react-native'
 
@@ -8,38 +8,24 @@ import { ScheduleProvider, useSchedule } from './context'
 import styles from './styles'
 
 const ScheduledTasksScreen: React.FC = () => {
-  const { currentTasks, tasks, addTask, editTask } = useSchedule()
-  const { openBottomSheet } = useBottomSheetContext()
+  const { currentTasks } = useSchedule()
+  const { openBottomSheet } = useBottomSheet()
 
   const handleAddTask = () => {
-    const maxId = tasks.reduce(
-      (max, task) => Math.max(max, parseInt(task.id, 10)),
-      0
-    )
-    const newId = (maxId + 1).toString()
-    const newTask: Task = {
-      id: `${newId}`,
-      title: `New Task ${newId}`,
-      description: 'Description for the new task',
-      date: new Date().toISOString(),
-      completed: false
-    }
-    addTask(newTask)
-    openBottomSheet('ADD_TASK')
+    openBottomSheet('add')
   }
 
   const handleEditTask = (task: Task) => {
-    openBottomSheet('EDIT_TASK', task.id)
+    openBottomSheet('edit', task)
   }
 
   const handleCompleteTask = (task: Task) => {
-    const updatedTask = { ...task, completed: true }
-    editTask(updatedTask)
+    openBottomSheet('complete', task)
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Schedule Tasks</Text>
+      <Text style={styles.title}>Scheduled Tasks</Text>
 
       <Button title="Add Task" onPress={handleAddTask} />
 
@@ -49,6 +35,8 @@ const ScheduledTasksScreen: React.FC = () => {
         renderItem={({ item }) => (
           <View style={styles.taskItem}>
             <Text style={styles.taskTitle}>{item.title}</Text>
+            <Text style={styles.taskTitle}>{item.description}</Text>
+            <Button title="Edit Task" onPress={() => handleEditTask(item)} />
             <Button
               title="Complete Task"
               onPress={() => handleCompleteTask(item)}

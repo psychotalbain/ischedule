@@ -7,11 +7,11 @@ import React, {
   useCallback
 } from 'react'
 
-import { ReactFCWithChildren, ScheduleContextType, Task } from '@types'
+import { ReactFCWithChildren, DataContextType, Task } from '@types'
 
 const STORAGE_KEY = '@data_tasks'
 
-const DataContext = createContext<ScheduleContextType | undefined>(undefined)
+const DataContext = createContext<DataContextType | undefined>(undefined)
 
 export const DataProvider: ReactFCWithChildren = ({ children }) => {
   const [tasks, setTasks] = useState<Task[]>([])
