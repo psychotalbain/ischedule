@@ -11,8 +11,8 @@ import styles from './styles'
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider>
-      <SafeAreaProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
         <GestureHandlerRootView style={styles.container}>
           <DataProvider>
             <BottomSheetProvider>
@@ -22,8 +22,8 @@ const App: React.FC = () => {
             </BottomSheetProvider>
           </DataProvider>
         </GestureHandlerRootView>
-      </SafeAreaProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </SafeAreaProvider>
   )
 }
 
