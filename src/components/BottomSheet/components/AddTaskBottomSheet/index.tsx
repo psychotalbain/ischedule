@@ -1,3 +1,4 @@
+import { ITaskContentAddProps } from '@components/BottomSheet/types'
 import { useData } from '@context/DataContext'
 import React, { useState } from 'react'
 import { View, Text, TextInput, Button } from 'react-native'
@@ -6,11 +7,7 @@ import { ITask } from '@types'
 
 import styles from './styles'
 
-type AddTaskContentProps = {
-  onClose: () => void
-}
-
-const AddTaskContent: React.FC<AddTaskContentProps> = ({ onClose }) => {
+const AddTaskContent: React.FC<ITaskContentAddProps> = ({ onClose }) => {
   const { tasks, addTask } = useData()
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')

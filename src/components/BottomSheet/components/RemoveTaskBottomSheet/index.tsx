@@ -1,15 +1,11 @@
+import { ITaskContentRemoveProps } from '@components/BottomSheet/types'
 import { useData } from '@context/DataContext'
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 
 import styles from './styles'
 
-type RemoveTaskContentProps = {
-  taskId: string
-  onClose: () => void
-}
-
-const RemoveTaskContent: React.FC<RemoveTaskContentProps> = ({
+const RemoveTaskContent: React.FC<ITaskContentRemoveProps> = ({
   taskId,
   onClose
 }) => {

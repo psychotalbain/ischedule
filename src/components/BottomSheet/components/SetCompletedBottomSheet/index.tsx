@@ -1,17 +1,11 @@
+import { ITaskContentCompleteProps } from '@components/BottomSheet/types'
 import { useData } from '@context/DataContext'
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 
-import { ITask } from '@types'
-
 import styles from './styles'
 
-type CompleteTaskContentProps = {
-  task: ITask
-  onClose: () => void
-}
-
-const CompleteTaskContent: React.FC<CompleteTaskContentProps> = ({
+const CompleteTaskContent: React.FC<ITaskContentCompleteProps> = ({
   task,
   onClose
 }) => {

@@ -1,3 +1,4 @@
+import { ITaskContentEditProps } from '@components/BottomSheet/types'
 import { useData } from '@context/DataContext'
 import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, Button } from 'react-native'
@@ -6,12 +7,10 @@ import { ITask } from '@types'
 
 import styles from './styles'
 
-type EditTaskContentProps = {
-  task: ITask
-  onClose: () => void
-}
-
-const EditTaskContent: React.FC<EditTaskContentProps> = ({ task, onClose }) => {
+const EditTaskContent: React.FC<ITaskContentEditProps> = ({
+  task,
+  onClose
+}) => {
   const { editTask } = useData()
   const [title, setTitle] = useState(task.title)
   const [description, setDescription] = useState(task.description)
