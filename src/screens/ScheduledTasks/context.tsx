@@ -7,15 +7,13 @@ import React, {
   useCallback
 } from 'react'
 
-import { ReactFCWithChildren, ScheduleContextType, Task } from '@types'
+import { IReactFCWithChildren, IScheduleContext, ITask } from '@types'
 
-const ScheduleContext = createContext<ScheduleContextType | undefined>(
-  undefined
-)
+const ScheduleContext = createContext<IScheduleContext | undefined>(undefined)
 
-export const ScheduleProvider: ReactFCWithChildren = ({ children }) => {
+export const ScheduleProvider: IReactFCWithChildren = ({ children }) => {
   const { tasks, addTask, editTask, removeTask } = useData()
-  const [listTask, setListTask] = useState<Task[]>([])
+  const [listTask, setListTask] = useState<ITask[]>([])
 
   useEffect(() => {
     setListTask(tasks.filter(task => task.completed))

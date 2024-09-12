@@ -1,4 +1,4 @@
-export type BottomSheetContextType = {
+export type IBottomSheetContext = {
   bottomSheetType: 'add' | 'edit' | 'remove' | 'complete' | null
   bottomSheetData: any
   openBottomSheet: (

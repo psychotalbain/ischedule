@@ -1,13 +1,13 @@
-import { BottomSheetContextType } from '@components/BottomSheet/types.d'
+import { IBottomSheetContext } from '@components/BottomSheet/types.d'
 import React, { createContext, useCallback, useContext, useState } from 'react'
 
-import { ReactFCWithChildren } from '@types'
+import { IReactFCWithChildren } from '@types'
 
-const BottomSheetContext = createContext<BottomSheetContextType | undefined>(
+const BottomSheetContext = createContext<IBottomSheetContext | undefined>(
   undefined
 )
 
-export const BottomSheetProvider: ReactFCWithChildren = ({ children }) => {
+export const BottomSheetProvider: IReactFCWithChildren = ({ children }) => {
   const [bottomSheetType, setBottomSheetType] = useState<
     'add' | 'edit' | 'remove' | 'complete' | null
   >(null)

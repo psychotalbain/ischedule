@@ -1,4 +1,4 @@
-export type Task = {
+export type ITask = {
   id: string
   title: string
   description: string
@@ -6,13 +6,13 @@ export type Task = {
   completed: boolean
 }
 
-export type DataContextType = {
-  tasks: Task[]
-  addTask: (task: Task) => void
-  editTask: (task: Task) => void
+export type IScheduleData = {
+  tasks: ITask[]
+  addTask: (task: ITask) => void
+  editTask: (task: ITask) => void
   removeTask: (taskId: string) => void
 }
 
-export interface ScheduleContextType extends DataContextType {
-  currentTasks: Task[]
+export interface IScheduleContext extends IScheduleData {
+  currentTasks: ITask[]
 }

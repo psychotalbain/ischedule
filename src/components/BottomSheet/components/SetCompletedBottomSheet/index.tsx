@@ -2,12 +2,12 @@ import { useData } from '@context/DataContext'
 import React from 'react'
 import { View, Text, Button } from 'react-native'
 
-import { Task } from '@types'
+import { ITask } from '@types'
 
 import styles from './styles'
 
 type CompleteTaskContentProps = {
-  task: Task
+  task: ITask
   onClose: () => void
 }
 

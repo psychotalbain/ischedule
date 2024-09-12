@@ -1,12 +1,8 @@
 import BottomSheet, { BottomSheetMethods } from '@devvie/bottom-sheet'
-import React, {
-  ReactNode,
-  useRef,
-  useMemo,
-  useEffect,
-  useCallback
-} from 'react'
+import React, { useRef, useMemo, useEffect, useCallback } from 'react'
 import { View, Text } from 'react-native'
+
+import { IReactFCWithChildren } from '@types'
 
 import AddTaskContent from './components/AddTaskBottomSheet'
 import EditTaskContent from './components/EditTaskBottomSheet'
@@ -14,11 +10,7 @@ import RemoveTaskContent from './components/RemoveTaskBottomSheet'
 import CompleteTaskContent from './components/SetCompletedBottomSheet'
 import { useBottomSheet } from './context'
 
-interface BottomSheetProps {
-  children: ReactNode
-}
-
-const BottomSheetComponent: React.FC<BottomSheetProps> = ({ children }) => {
+const BottomSheetComponent: IReactFCWithChildren = ({ children }) => {
   const bottomSheetRef = useRef<BottomSheetMethods>(null)
   const { bottomSheetType, bottomSheetData, closeBottomSheet } =
     useBottomSheet()

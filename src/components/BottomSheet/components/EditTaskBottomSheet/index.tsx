@@ -2,12 +2,12 @@ import { useData } from '@context/DataContext'
 import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, Button } from 'react-native'
 
-import { Task } from '@types'
+import { ITask } from '@types'
 
 import styles from './styles'
 
 type EditTaskContentProps = {
-  task: Task
+  task: ITask
   onClose: () => void
 }
 
@@ -22,7 +22,7 @@ const EditTaskContent: React.FC<EditTaskContentProps> = ({ task, onClose }) => {
   }, [task])
 
   const handleEditTask = () => {
-    const updatedTask: Task = {
+    const updatedTask: ITask = {
       ...task,
       title,
       description

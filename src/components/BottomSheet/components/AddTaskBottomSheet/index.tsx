@@ -2,7 +2,7 @@ import { useData } from '@context/DataContext'
 import React, { useState } from 'react'
 import { View, Text, TextInput, Button } from 'react-native'
 
-import { Task } from '@types'
+import { ITask } from '@types'
 
 import styles from './styles'
 
@@ -21,7 +21,7 @@ const AddTaskContent: React.FC<AddTaskContentProps> = ({ onClose }) => {
       0
     )
     const newId = (maxId + 1).toString()
-    const newTask: Task = {
+    const newTask: ITask = {
       id: `${newId}`,
       title: title,
       description: description,

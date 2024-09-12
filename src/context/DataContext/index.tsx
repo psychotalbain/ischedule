@@ -7,14 +7,14 @@ import React, {
   useCallback
 } from 'react'
 
-import { ReactFCWithChildren, DataContextType, Task } from '@types'
+import { IReactFCWithChildren, IScheduleData, ITask } from '@types'
 
 const STORAGE_KEY = '@data_tasks'
 
-const DataContext = createContext<DataContextType | undefined>(undefined)
+const DataContext = createContext<IScheduleData | undefined>(undefined)
 
-export const DataProvider: ReactFCWithChildren = ({ children }) => {
-  const [tasks, setTasks] = useState<Task[]>([])
+export const DataProvider: IReactFCWithChildren = ({ children }) => {
+  const [tasks, setTasks] = useState<ITask[]>([])
 
   useEffect(() => {
     const loadTasks = async () => {
@@ -32,7 +32,7 @@ export const DataProvider: ReactFCWithChildren = ({ children }) => {
     loadTasks()
   }, [])
 
-  const saveTasks = useCallback(async (newTasks: Task[]) => {
+  const saveTasks = useCallback(async (newTasks: ITask[]) => {
     try {
       console.log('Saving tasks:', newTasks)
       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(newTasks))
@@ -42,7 +42,7 @@ export const DataProvider: ReactFCWithChildren = ({ children }) => {
   }, [])
 
   const addTask = useCallback(
-    (task: Task) => {
+    (task: ITask) => {
       setTasks(prevTasks => {
         if (prevTasks.some(t => t.id === task.id)) {
           console.warn('Task with this ID already exists:', task.id)
@@ -58,7 +58,7 @@ export const DataProvider: ReactFCWithChildren = ({ children }) => {
   )
 
   const editTask = useCallback(
-    (task: Task) => {
+    (task: ITask) => {
       setTasks(prevTasks => {
         const updatedTasks = prevTasks.map(t => (t.id === task.id ? task : t))
         saveTasks(updatedTasks)
