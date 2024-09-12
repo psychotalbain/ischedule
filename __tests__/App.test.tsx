@@ -4,10 +4,9 @@
 
 import 'react-native'
 import { it } from '@jest/globals'
+import App from '@screens/App'
 import React from 'react'
 import renderer from 'react-test-renderer'
-
-import App from '../App'
 
 // Note: import explicitly to use the types shipped with jest.
 

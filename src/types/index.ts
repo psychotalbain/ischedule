@@ -1,3 +1,3 @@
 export * from './react'
 export * from './schedule'
-export * from './scheduledTasks'
+export * from './theme'
