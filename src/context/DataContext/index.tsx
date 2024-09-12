@@ -21,7 +21,6 @@ export const DataProvider: IReactFCWithChildren = ({ children }) => {
       try {
         const storedTasks = await AsyncStorage.getItem(STORAGE_KEY)
         if (storedTasks) {
-          console.log('Loaded tasks:', JSON.parse(storedTasks))
           setTasks(JSON.parse(storedTasks))
         }
       } catch (error) {
@@ -34,7 +33,6 @@ export const DataProvider: IReactFCWithChildren = ({ children }) => {
 
   const saveTasks = useCallback(async (newTasks: ITask[]) => {
     try {
-      console.log('Saving tasks:', newTasks)
       await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(newTasks))
     } catch (error) {
       console.error('Failed to save tasks:', error)

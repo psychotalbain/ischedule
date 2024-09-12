@@ -19,13 +19,11 @@ export const BottomSheetProvider: IReactFCWithChildren = ({ children }) => {
   ) => {
     setBottomSheetType(type)
     setBottomSheetData(data)
-    console.log('aqui, 1')
   }
 
   const closeBottomSheet = useCallback(() => {
     setBottomSheetType(null)
     setBottomSheetData(null)
-    console.log('aqui, 0')
   }, [])
 
   return (
