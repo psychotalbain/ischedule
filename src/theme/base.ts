@@ -15,6 +15,12 @@ const baseTheme: IBaseTheme = {
     md: 14,
     lg: 16,
     xl: 20
+  },
+  fontWeight: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700
   }
 }
 

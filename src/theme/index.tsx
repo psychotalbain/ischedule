@@ -1,6 +1,7 @@
 import {
   DarkTheme as NavigationDarkTheme,
-  DefaultTheme as NavigationLightTheme
+  DefaultTheme as NavigationLightTheme,
+  Theme
 } from '@react-navigation/native'
 import React, {
   createContext,
@@ -20,7 +21,8 @@ import Themes from './custom'
 const ThemeContext = createContext<IThemeContext>({
   toggleTheme: () => {},
   isDarkTheme: false,
-  theme: Themes.light as unknown as ITheme
+  theme: Themes.light as unknown as ITheme,
+  themeNavigator: NavigationLightTheme
 })
 
 export const useTheme = () => useContext(ThemeContext)
@@ -39,22 +41,31 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     setIsDarkTheme(prevTheme => !prevTheme)
   }, [])
 
+  const themeNavigator: Theme = isDarkTheme
+    ? NavigationDarkTheme
+    : NavigationLightTheme
+
   const currentTheme = isDarkTheme ? Themes.dark : Themes.light
 
   const combinedTheme: ITheme = {
     ...currentTheme,
     colors: {
-      ...currentTheme.colors,
       ...(isDarkTheme
         ? NavigationDarkTheme.colors
-        : NavigationLightTheme.colors)
+        : NavigationLightTheme.colors),
+      ...currentTheme.colors
     },
     dark: isDarkTheme
   }
 
   return (
     <ThemeContext.Provider
-      value={{ toggleTheme, isDarkTheme, theme: combinedTheme }}>
+      value={{
+        toggleTheme,
+        isDarkTheme,
+        theme: combinedTheme,
+        themeNavigator
+      }}>
       <PaperProvider theme={combinedTheme}>
         <StyledThemeProvider theme={combinedTheme}>
           {children}
