@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
 import { FlatList } from 'react-native'
 
-import { ITask } from '@types'
 import * as C from '@components'
+import { ITask } from '@types'
 
 import { ScheduleProvider, useSchedule } from './context'
 import * as S from './styles'

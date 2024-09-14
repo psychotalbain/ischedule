@@ -1,8 +1,8 @@
-import { ITaskContentEditProps } from '@components/BottomSheet/types'
-import { useData } from '@context/DataContext'
 import React, { useState, useEffect } from 'react'
 import { View, Text, TextInput, Button } from 'react-native'
 
+import { ITaskContentEditProps } from '@components/BottomSheet/types'
+import { useData } from '@context/DataContext'
 import { ITask } from '@types'
 
 import styles from './styles'

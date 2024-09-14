@@ -1,7 +1,8 @@
-import { ITaskContentCompleteProps } from '@components/BottomSheet/types'
-import { useData } from '@context/DataContext'
 import React from 'react'
 import { View, Text, Button } from 'react-native'
+
+import { ITaskContentCompleteProps } from '@components/BottomSheet/types'
+import { useData } from '@context/DataContext'
 
 import styles from './styles'
 

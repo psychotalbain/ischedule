@@ -1,4 +1,3 @@
-import { useData } from '@context/DataContext'
 import { useTheme } from '@theme'
 import React, {
   createContext,
@@ -9,6 +8,7 @@ import React, {
 } from 'react'
 
 import { useBottomSheet } from '@components/BottomSheet/context'
+import { useData } from '@context/DataContext'
 import { IReactFCWithChildren, IScheduleContext, ITask } from '@types'
 
 const ScheduleContext = createContext<IScheduleContext | undefined>(undefined)

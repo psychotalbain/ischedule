@@ -23,3 +23,8 @@ export interface IScheduleContext extends IScheduleData {
   handleCompleteTask: (task: ITask) => void
   handleTheme: () => void
 }
+
+export interface IScheduleCompleteContext extends IScheduleData {
+  currentTasks: ITask[]
+  handleRemoveTask: (task: ITask) => void
+}

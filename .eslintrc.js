@@ -52,8 +52,7 @@ module.exports = {
         groups: [
           'module',
           '/^@shared/',
-          '/^@components/',
-          '/^@types/',
+          ['/^@components/', '/^@context/', '/^@types/'],
           ['parent', 'sibling', 'index']
         ],
         alphabetize: { order: 'asc', ignoreCase: true, groupBySpecifier: true }

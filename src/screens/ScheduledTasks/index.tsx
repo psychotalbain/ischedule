@@ -1,39 +1,37 @@
-import { useBottomSheet } from '@components/BottomSheet/context'
-import React from 'react'
-import { View, Text, Button, FlatList } from 'react-native'
+import React, { useCallback } from 'react'
+import { FlatList } from 'react-native'
 
+import * as C from '@components'
 import { ITask } from '@types'
 
 import { ScheduleProvider, useSchedule } from './context'
-import styles from './styles'
+import * as S from './styles'
 
 const ScheduledTasksScreen: React.FC = () => {
-  const { currentTasks } = useSchedule()
-  const { openBottomSheet } = useBottomSheet()
+  const { currentTasks, handleRemoveTask } = useSchedule()
 
-  const handleRemoveTask = (task: ITask) => {
-    openBottomSheet('remove', task.id)
-  }
+  const renderTask = useCallback((item: ITask) => {
+    return (
+      <C.CardComponent
+        title={item.title}
+        description={item.description}
+        creation={item.date}
+        variant="scheduled"
+        onDelete={() => handleRemoveTask(item)}
+      />
+    )
+  }, [])
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Scheduled Tasks</Text>
-
-      <FlatList
-        data={currentTasks}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.taskItem}>
-            <Text style={styles.taskTitle}>{item.title}</Text>
-            <Text style={styles.taskTitle}>{item.description}</Text>
-            <Button
-              title="Remove Task"
-              onPress={() => handleRemoveTask(item)}
-            />
-          </View>
-        )}
-      />
-    </View>
+    <C.SafeAreaView>
+      <S.Container>
+        <FlatList
+          data={currentTasks}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => renderTask(item)}
+        />
+      </S.Container>
+    </C.SafeAreaView>
   )
 }
 

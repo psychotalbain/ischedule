@@ -1,4 +1,3 @@
-import ButtonComponent from '@components/Button'
 import {
   Avatar,
   Card as CardPaper,
@@ -6,6 +5,7 @@ import {
 } from 'react-native-paper'
 import styled from 'styled-components'
 
+import ButtonComponent from '@components/Button'
 import { IAvatarProps } from '@types'
 
 export const Card = styled(CardPaper).attrs(() => ({

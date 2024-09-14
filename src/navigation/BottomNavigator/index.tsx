@@ -1,9 +1,10 @@
-import * as C from '@components'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import Screens from '@screens'
 import { useTheme } from '@theme'
 import React, { useCallback, useMemo } from 'react'
+
+import * as C from '@components'
 
 import dynamicStyles from './styles'
 

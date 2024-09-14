@@ -1,4 +1,3 @@
-import { useData } from '@context/DataContext'
 import React, {
   createContext,
   useContext,
@@ -7,35 +6,34 @@ import React, {
   useCallback
 } from 'react'
 
-import { IReactFCWithChildren, IScheduleContext, ITask } from '@types'
+import { useBottomSheet } from '@components/BottomSheet/context'
+import { useData } from '@context/DataContext'
+import { IReactFCWithChildren, IScheduleCompleteContext, ITask } from '@types'
 
-const ScheduleContext = createContext<IScheduleContext | undefined>(undefined)
+const ScheduleContext = createContext<IScheduleCompleteContext | undefined>(
+  undefined
+)
 
 export const ScheduleProvider: IReactFCWithChildren = ({ children }) => {
-  const { tasks, addTask, editTask, removeTask } = useData()
+  const { openBottomSheet } = useBottomSheet()
+  const { tasks } = useData()
+
   const [listTask, setListTask] = useState<ITask[]>([])
 
   useEffect(() => {
     setListTask(tasks.filter(task => task.completed))
   }, [tasks])
 
-  const removeLocalTask = useCallback(
-    (taskId: string) => {
-      const updatedList = listTask.filter(task => task.id !== taskId)
-      setListTask(updatedList)
-      removeTask(taskId)
-    },
-    [listTask, removeTask]
-  )
+  const handleRemoveTask = useCallback((task: ITask) => {
+    openBottomSheet('remove', task.id)
+  }, [])
 
   return (
     <ScheduleContext.Provider
       value={{
         tasks,
         currentTasks: listTask,
-        addTask,
-        editTask,
-        removeTask: removeLocalTask
+        handleRemoveTask
       }}>
       {children}
     </ScheduleContext.Provider>

@@ -1,6 +1,6 @@
-import { IBottomSheetContext } from '@components/BottomSheet/types.d'
 import React, { createContext, useCallback, useContext, useState } from 'react'
 
+import { IBottomSheetContext } from '@components/BottomSheet/types.d'
 import { IReactFCWithChildren } from '@types'
 
 const BottomSheetContext = createContext<IBottomSheetContext | undefined>(
