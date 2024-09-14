@@ -1,5 +1,6 @@
 export * from './card'
 export * from './icon'
+export * from './input'
 export * from './react'
 export * from './safeAreaView'
 export * from './schedule'
