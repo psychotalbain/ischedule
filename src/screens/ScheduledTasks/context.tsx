@@ -6,7 +6,7 @@ import React, {
   useCallback
 } from 'react'
 
-import { useBottomSheet } from '@components/BottomSheet/context'
+import { useBottomSheet } from '@components'
 import { useData } from '@context/DataContext'
 import { IReactFCWithChildren, IScheduleCompleteContext, ITask } from '@types'
 
