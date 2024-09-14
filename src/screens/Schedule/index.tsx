@@ -1,14 +1,17 @@
+import * as C from '@components'
 import { useBottomSheet } from '@components/BottomSheet/context'
-import React from 'react'
-import { View, Text, Button, FlatList } from 'react-native'
+import { useTheme } from '@theme'
+import React, { useCallback } from 'react'
+import { FlatList } from 'react-native'
 
 import { ITask } from '@types'
 
 import { ScheduleProvider, useSchedule } from './context'
-import styles from './styles'
+import * as S from './styles' // Importa os estilos
 
 const ScheduledTasksScreen: React.FC = () => {
   const { currentTasks } = useSchedule()
+  const { toggleTheme } = useTheme()
   const { openBottomSheet } = useBottomSheet()
 
   const handleAddTask = () => {
@@ -23,28 +26,41 @@ const ScheduledTasksScreen: React.FC = () => {
     openBottomSheet('complete', task)
   }
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Scheduled Tasks</Text>
+  const handleTheme = () => {
+    toggleTheme()
+  }
 
-      <Button title="Add Task" onPress={handleAddTask} />
-
-      <FlatList
-        data={currentTasks}
-        keyExtractor={item => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.taskItem}>
-            <Text style={styles.taskTitle}>{item.title}</Text>
-            <Text style={styles.taskTitle}>{item.description}</Text>
-            <Button title="Edit Task" onPress={() => handleEditTask(item)} />
-            <Button
-              title="Complete Task"
-              onPress={() => handleCompleteTask(item)}
-            />
-          </View>
-        )}
+  const renderTask = useCallback((item: ITask) => {
+    return (
+      <C.CardComponent
+        title={item.title}
+        description={item.description}
+        creation={item.date}
+        variant="scheduled"
+        onComplete={() => handleCompleteTask(item)}
+        onEdit={() => handleEditTask(item)}
       />
-    </View>
+    )
+  }, [])
+
+  return (
+    <C.SafeAreaView>
+      <S.Container>
+        <S.Button icon="theme-light-dark" onPress={handleTheme} mode="outlined">
+          Toggle Theme
+        </S.Button>
+
+        <S.Button icon="pen-plus" onPress={handleAddTask} mode="contained">
+          Add Task
+        </S.Button>
+
+        <FlatList
+          data={currentTasks}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => renderTask(item)}
+        />
+      </S.Container>
+    </C.SafeAreaView>
   )
 }
 

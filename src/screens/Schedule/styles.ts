@@ -1,22 +1,28 @@
-import { StyleSheet } from 'react-native'
+import { TextComponent, ButtonComponent } from '@components'
+import { View } from 'react-native'
+import styled from 'styled-components'
+import { styled as styledNative } from 'styled-components/native'
 
-export default StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: '#fff'
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16
-  },
-  taskItem: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
-  },
-  taskTitle: {
-    fontSize: 18
-  }
-})
+export const Container = styled(View)`
+  flex: 1;
+  padding: 16px;
+  background-color: ${props => props.theme.colors.background};
+`
+
+export const Title = styled(TextComponent)`
+  margin-vertical: ${({ theme }) => theme.spacing.lg}px;
+`
+
+export const Button = styled(ButtonComponent)`
+  margin-vertical: ${({ theme }) => theme.spacing.xs}px;
+`
+
+export const TaskItem = styledNative.View`
+  padding: 10px;
+  border-bottom-width: 1px;
+  border-bottom-color: ${props => props.theme.colors.border};
+`
+
+export const TaskTitle = styled(TextComponent)`
+  margin-vertical: ${({ theme }) => theme.spacing.xs}px;
+`
