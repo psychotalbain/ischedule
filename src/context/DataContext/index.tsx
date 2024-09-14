@@ -7,11 +7,11 @@ import React, {
   useCallback
 } from 'react'
 
-import { IReactFCWithChildren, IScheduleData, ITask } from '@types'
+import { IReactFCWithChildren, IScheduleDataContext, ITask } from '@types'
 
 const STORAGE_KEY = '@data_tasks'
 
-const DataContext = createContext<IScheduleData | undefined>(undefined)
+const DataContext = createContext<IScheduleDataContext | undefined>(undefined)
 
 export const DataProvider: IReactFCWithChildren = ({ children }) => {
   const [tasks, setTasks] = useState<ITask[]>([])

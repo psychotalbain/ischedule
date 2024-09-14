@@ -48,14 +48,15 @@ module.exports = {
     'import-helpers/order-imports': [
       'warn',
       {
-        newlinesBetween: 'always', // new line between groups
+        newlinesBetween: 'always',
         groups: [
           'module',
           '/^@shared/',
+          '/^@components/',
           '/^@types/',
           ['parent', 'sibling', 'index']
         ],
-        alphabetize: { order: 'asc', ignoreCase: true }
+        alphabetize: { order: 'asc', ignoreCase: true, groupBySpecifier: true }
       }
     ]
   },

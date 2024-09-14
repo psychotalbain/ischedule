@@ -1,7 +1,8 @@
-import { TextComponent, ButtonComponent } from '@components'
 import { View } from 'react-native'
 import styled from 'styled-components'
 import { styled as styledNative } from 'styled-components/native'
+
+import { TextComponent, ButtonComponent } from '@components'
 
 export const Container = styled(View)`
   flex: 1;

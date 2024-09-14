@@ -1,34 +1,20 @@
-import * as C from '@components'
-import { useBottomSheet } from '@components/BottomSheet/context'
-import { useTheme } from '@theme'
 import React, { useCallback } from 'react'
 import { FlatList } from 'react-native'
 
 import { ITask } from '@types'
+import * as C from '@components'
 
 import { ScheduleProvider, useSchedule } from './context'
-import * as S from './styles' // Importa os estilos
+import * as S from './styles'
 
 const ScheduledTasksScreen: React.FC = () => {
-  const { currentTasks } = useSchedule()
-  const { toggleTheme } = useTheme()
-  const { openBottomSheet } = useBottomSheet()
-
-  const handleAddTask = () => {
-    openBottomSheet('add')
-  }
-
-  const handleEditTask = (task: ITask) => {
-    openBottomSheet('edit', task)
-  }
-
-  const handleCompleteTask = (task: ITask) => {
-    openBottomSheet('complete', task)
-  }
-
-  const handleTheme = () => {
-    toggleTheme()
-  }
+  const {
+    currentTasks,
+    handleTheme,
+    handleAddTask,
+    handleEditTask,
+    handleCompleteTask
+  } = useSchedule()
 
   const renderTask = useCallback((item: ITask) => {
     return (
