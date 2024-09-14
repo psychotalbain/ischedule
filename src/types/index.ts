@@ -1,3 +1,7 @@
+export * from './card'
+export * from './icon'
 export * from './react'
+export * from './safeAreaView'
 export * from './schedule'
+export * from './text'
 export * from './theme'
