@@ -1,10 +1,9 @@
 import React from 'react'
-import { View, Text, Button } from 'react-native'
 
 import { ITaskContentCompleteProps } from '@components/BottomSheet/types'
 import { useData } from '@context/DataContext'
 
-import styles from './styles'
+import * as S from './styles'
 
 const CompleteTaskContent: React.FC<ITaskContentCompleteProps> = ({
   task,
@@ -19,14 +18,18 @@ const CompleteTaskContent: React.FC<ITaskContentCompleteProps> = ({
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Complete Task</Text>
-      <Text>Are you sure you want to mark this task as completed?</Text>
-      <View style={styles.buttonContainer}>
-        <Button title="Complete" onPress={handleCompleteTask} />
-        <Button title="Cancel" onPress={onClose} />
-      </View>
-    </View>
+    <S.Container>
+      <S.Title>Complete Task</S.Title>
+      <S.Description>
+        Are you sure you want to mark this task as completed?
+      </S.Description>
+      <S.ContainerButtons>
+        <S.Button onPress={handleCompleteTask}>Complete</S.Button>
+        <S.Button mode="outlined" onPress={onClose}>
+          Cancel
+        </S.Button>
+      </S.ContainerButtons>
+    </S.Container>
   )
 }
 

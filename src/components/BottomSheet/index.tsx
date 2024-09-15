@@ -1,13 +1,14 @@
 import BottomSheet, { BottomSheetMethods } from '@devvie/bottom-sheet'
 import React, { useRef, useMemo, useEffect, useCallback } from 'react'
-import { View, Text } from 'react-native'
 
-import { useBottomSheet } from '@components'
-import AddTaskContent from '@components/BottomSheet/components/AddTaskBottomSheet'
-import EditTaskContent from '@components/BottomSheet/components/EditTaskBottomSheet'
-import RemoveTaskContent from '@components/BottomSheet/components/RemoveTaskBottomSheet'
-import CompleteTaskContent from '@components/BottomSheet/components/SetCompletedBottomSheet'
 import { IReactFCWithChildren } from '@types'
+
+import AddTaskContent from './components/AddTaskBottomSheet'
+import EditTaskContent from './components/EditTaskBottomSheet'
+import NoContent from './components/NoContent'
+import RemoveTaskContent from './components/RemoveTaskBottomSheet'
+import CompleteTaskContent from './components/SetCompletedBottomSheet'
+import { useBottomSheet } from './context'
 
 const BottomSheetComponent: IReactFCWithChildren = ({ children }) => {
   const bottomSheetRef = useRef<BottomSheetMethods>(null)
@@ -33,11 +34,7 @@ const BottomSheetComponent: IReactFCWithChildren = ({ children }) => {
           <CompleteTaskContent task={bottomSheetData} onClose={handleClose} />
         )
       default:
-        return (
-          <View>
-            <Text>No content available</Text>
-          </View>
-        )
+        return <NoContent />
     }
   }, [bottomSheetType, bottomSheetData])
 
@@ -50,7 +47,10 @@ const BottomSheetComponent: IReactFCWithChildren = ({ children }) => {
   return (
     <>
       {children}
-      <BottomSheet ref={bottomSheetRef} onClose={closeBottomSheet}>
+      <BottomSheet
+        animationType="spring"
+        ref={bottomSheetRef}
+        onClose={closeBottomSheet}>
         {renderContent}
       </BottomSheet>
     </>

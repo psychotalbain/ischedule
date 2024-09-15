@@ -1,26 +1,25 @@
-import { StyleSheet } from 'react-native'
+import { View } from 'react-native'
+import styled from 'styled-components'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 16
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 12,
-    height: 50
-  },
-  buttonContainer: {
-    minHeight: 50
-  }
-})
+import ButtonComponent from '@components/Button'
+import InputComponent from '@components/Input'
+import TextComponent from '@components/Text'
 
-export default styles
+export const Container = styled(View)`
+  flex-grow: 1;
+  min-height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: ${({ theme }) => theme.colors.background};
+  padding-horizontal: ${({ theme }) => theme.spacing.md}px;
+`
+
+export const Title = styled(TextComponent)`
+  margin-vertical: ${({ theme }) => theme.spacing.lg}px;
+`
+
+export const Input = styled(InputComponent)``
+
+export const Button = styled(ButtonComponent)`
+  position: fixed;
+`

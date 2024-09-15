@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { View, Text, TextInput, Button } from 'react-native'
 
 import { ITaskContentEditProps } from '@components/BottomSheet/types'
 import { useData } from '@context/DataContext'
 import { ITask } from '@types'
 
-import styles from './styles'
+import * as S from './styles'
 
 const EditTaskContent: React.FC<ITaskContentEditProps> = ({
   task,
@@ -31,24 +30,22 @@ const EditTaskContent: React.FC<ITaskContentEditProps> = ({
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Edit Task</Text>
-      <TextInput
-        style={styles.input}
+    <S.Container>
+      <S.Title>Edit Task</S.Title>
+      <S.Input
+        label="Title"
         placeholder="Title"
         value={title}
         onChangeText={setTitle}
       />
-      <TextInput
-        style={styles.input}
+      <S.Input
+        label="Description"
         placeholder="Description"
         value={description}
         onChangeText={setDescription}
       />
-      <View style={styles.buttonContainer}>
-        <Button title="Save" onPress={handleEditTask} />
-      </View>
-    </View>
+      <S.Button onPress={handleEditTask}> Save </S.Button>
+    </S.Container>
   )
 }
 

@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, Button } from 'react-native'
 
 import { ITaskContentAddProps } from '@components/BottomSheet/types'
-import { useData } from '@context/DataContext'
+import { useData } from '@context'
 import { ITask } from '@types'
 
-import styles from './styles'
+import * as S from './styles'
 
 const AddTaskContent: React.FC<ITaskContentAddProps> = ({ onClose }) => {
   const { tasks, addTask } = useData()
@@ -30,24 +29,22 @@ const AddTaskContent: React.FC<ITaskContentAddProps> = ({ onClose }) => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Add Task</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Title"
-        value={title}
+    <S.Container>
+      <S.Title variant="titleSmall">Add Task</S.Title>
+      <S.Input
+        label="Title"
+        placeholder="Digite aqui"
+        error={false}
         onChangeText={setTitle}
       />
-      <TextInput
-        style={styles.input}
-        placeholder="Description"
+      <S.Input
+        label="Descrição"
+        placeholder="Digite aqui"
         value={description}
         onChangeText={setDescription}
       />
-      <View style={styles.buttonContainer}>
-        <Button title="Add" onPress={handleAddTask} />
-      </View>
-    </View>
+      <S.Button onPress={handleAddTask}>Add</S.Button>
+    </S.Container>
   )
 }
 
