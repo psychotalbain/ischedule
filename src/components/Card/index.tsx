@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { ICardProps } from '@types'
 
@@ -13,6 +14,8 @@ const CardComponent: React.FC<Omit<ICardProps, 'children'>> = ({
   onComplete,
   onDelete
 }) => {
+  const { t } = useTranslation()
+
   const renderStatusBadge = useMemo(() => {
     return <S.StatusBadge variant={variant} icon="calendar-check" />
   }, [variant])
@@ -29,9 +32,13 @@ const CardComponent: React.FC<Omit<ICardProps, 'children'>> = ({
       </S.Card.Content>
 
       <S.Card.Actions>
-        {onEdit && <S.Button onPress={onEdit}>Edit</S.Button>}
-        {onComplete && <S.Button onPress={onComplete}>Complete</S.Button>}
-        {onDelete && <S.Button onPress={onDelete}>Remove</S.Button>}
+        {onEdit && <S.Button onPress={onEdit}>{t('buttons.edit')}</S.Button>}
+        {onComplete && (
+          <S.Button onPress={onComplete}>{t('buttons.complete')}</S.Button>
+        )}
+        {onDelete && (
+          <S.Button onPress={onDelete}>{t('buttons.cancel')}</S.Button>
+        )}
       </S.Card.Actions>
     </S.Card>
   )

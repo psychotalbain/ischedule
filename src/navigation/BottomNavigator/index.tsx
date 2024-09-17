@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import Screens from '@screens'
 import { useTheme } from '@theme'
 import React, { useCallback, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import * as C from '@components'
 
@@ -11,6 +12,7 @@ import dynamicStyles from './styles'
 const Tab = createBottomTabNavigator()
 
 const BottomNavigator: React.FC = () => {
+  const { t } = useTranslation()
   const { theme, themeNavigator } = useTheme()
 
   const styles = dynamicStyles(theme)
@@ -18,6 +20,12 @@ const BottomNavigator: React.FC = () => {
     return {
       Schedule: 'calendar-check',
       ScheduledTasks: 'check-all'
+    } as const
+  }, [])
+  const titles = useMemo(() => {
+    return {
+      Schedule: t('screen.schedule.title'),
+      ScheduledTasks: t('screen.scheduleTasks.title')
     } as const
   }, [])
 
@@ -55,9 +63,10 @@ const BottomNavigator: React.FC = () => {
               iconName
             )
           },
-          tabBarLabel: ({ children, focused }) => {
+          tabBarLabel: ({ focused }) => {
+            const titleLabel = titles[route.name as keyof typeof icons]
             return renderLabel(
-              children,
+              titleLabel,
               focused ? theme.colors.onPrimary : theme.colors.primaryContainer,
               focused
             )

@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FlatList } from 'react-native'
 
 import * as C from '@components'
@@ -8,6 +9,8 @@ import { ScheduleProvider, useSchedule } from './context'
 import * as S from './styles'
 
 const ScheduledTasksScreen: React.FC = () => {
+  const { t } = useTranslation()
+
   const {
     currentTasks,
     handleTheme,
@@ -33,11 +36,11 @@ const ScheduledTasksScreen: React.FC = () => {
     <C.SafeAreaView>
       <S.Container>
         <S.Button icon="theme-light-dark" onPress={handleTheme} mode="outlined">
-          Toggle Theme
+          {t('screen.schedule.toggle')}
         </S.Button>
 
         <S.Button icon="pen-plus" onPress={handleAddTask} mode="contained">
-          Add Task
+          {t('screen.schedule.addNew')}
         </S.Button>
 
         <FlatList

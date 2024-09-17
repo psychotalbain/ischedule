@@ -1,6 +1,7 @@
 import { BottomNavigator } from '@navigation'
 import ThemeProvider from '@theme'
-import React from 'react'
+import { i18n } from '@utils'
+import React, { useEffect } from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
@@ -11,6 +12,14 @@ import { DataProvider } from '@context'
 import styles from './styles'
 
 const App: React.FC = () => {
+  const init = async () => {
+    i18n.initializeI18Next()
+  }
+
+  useEffect(() => {
+    init()
+  }, [])
+
   return (
     <SafeAreaProvider>
       <ThemeProvider>

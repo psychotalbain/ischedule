@@ -1,0 +1,58 @@
+{
+  "screen": {
+    "schedule": {
+      "title": "Agenda",
+      "addNew": "Adicionar nova tarefa",
+      "toggle": "Alternar tema"
+    },
+    "scheduleTasks": {
+      "title": "Finalizadas",
+      "empty": "Nenhuma tarefa foi concluída até o momento"
+    }
+  },
+  "bottomSheet": {
+    "add": {
+      "title": "Vamos criar sua próxima tarefa?",
+      "fields": {
+        "title": {
+          "label": "Nome",
+          "placeholder": "Insira o nome da tarefa"
+        },
+        "description": {
+          "label": "Descrição",
+          "placeholder": "Insira a descrição da tarefa"
+        }
+      }
+    },
+    "edit": {
+      "title": "Edite sua tarefa",
+      "fields": {
+        "title": {
+          "label": "Nome",
+          "placeholder": "Insira o nome da tarefa"
+        },
+        "description": {
+          "label": "Descrição",
+          "placeholder": "Insira a descrição da tarefa"
+        }
+      }
+    },
+    "complete": {
+      "title": "Concluir tarefa",
+      "description": "Tem certeza de que deseja marcar esta tarefa como concluída?"
+    },
+    "remove": {
+      "title": "Remover tarefa",
+      "description": "Tem certeza de que deseja excluir esta tarefa?"
+    }
+  },
+  "buttons": {
+    "add": "Adicionar",
+    "edit": "Editar",
+    "complete": "Concluir",
+    "remove": "Excluir",
+    "save": "Salvar",
+    "cancel": "Cancelar"
+  },
+  "load": "..."
+}

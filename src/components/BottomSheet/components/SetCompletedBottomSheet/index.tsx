@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import { ITaskContentCompleteProps } from '@components/BottomSheet/types'
 import { useData } from '@context/DataContext'
@@ -9,6 +10,7 @@ const CompleteTaskContent: React.FC<ITaskContentCompleteProps> = ({
   task,
   onClose
 }) => {
+  const { t } = useTranslation()
   const { editTask } = useData()
 
   const handleCompleteTask = () => {
@@ -19,14 +21,16 @@ const CompleteTaskContent: React.FC<ITaskContentCompleteProps> = ({
 
   return (
     <S.Container>
-      <S.Title>Complete Task</S.Title>
-      <S.Description>
-        Are you sure you want to mark this task as completed?
+      <S.Title variant="titleSmall">{t('bottomSheet.complete.title')}</S.Title>
+      <S.Description variant="labelMedium">
+        {t('bottomSheet.complete.description')}
       </S.Description>
       <S.ContainerButtons>
-        <S.Button onPress={handleCompleteTask}>Complete</S.Button>
+        <S.Button onPress={handleCompleteTask}>
+          {t('buttons.complete')}
+        </S.Button>
         <S.Button mode="outlined" onPress={onClose}>
-          Cancel
+          {t('buttons.cancel')}
         </S.Button>
       </S.ContainerButtons>
     </S.Container>

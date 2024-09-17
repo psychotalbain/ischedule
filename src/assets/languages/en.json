@@ -1,0 +1,58 @@
+{
+  "screen": {
+    "schedule": {
+      "title": "Schedule",
+      "addNew": "Add new task",
+      "toggle": "Toggle theme"
+    },
+    "scheduleTasks": {
+      "title": "Completed",
+      "empty": "No tasks have been completed yet"
+    }
+  },
+  "bottomSheet": {
+    "add": {
+      "title": "Shall we create your next task?",
+      "fields": {
+        "title": {
+          "label": "Name",
+          "placeholder": "Enter the task name"
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "Enter the task description"
+        }
+      }
+    },
+    "edit": {
+      "title": "Edit your task",
+      "fields": {
+        "title": {
+          "label": "Name",
+          "placeholder": "Enter the task name"
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "Enter the task description"
+        }
+      }
+    },
+    "complete": {
+      "title": "Complete task",
+      "description": "Are you sure you want to mark this task as completed?"
+    },
+    "remove": {
+      "title": "Remove task",
+      "description": "Are you sure you want to delete this task?"
+    }
+  },
+  "buttons": {
+    "add": "Add",
+    "edit": "Edit",
+    "complete": "Complete",
+    "remove": "Delete",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "load": "..."
+}
