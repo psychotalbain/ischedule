@@ -6103,6 +6103,7 @@ __metadata:
     react-i18next: ^15.0.2
     react-native: 0.75.3
     react-native-gesture-handler: ^2.19.0
+    react-native-localize: ^3.2.1
     react-native-paper: ^5.12.5
     react-native-reanimated: ^3.15.2
     react-native-safe-area-context: ^4.11.0
@@ -8311,6 +8312,20 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: ce9b9fc6537debf962e6b8d84f1c4cf18fe00f39bd86498e84a203ebb26bf3543c2642ed247d974537840407b7ddb602939fd8c817c00a3416e87bddc8f2088f
+  languageName: node
+  linkType: hard
+
+"react-native-localize@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "react-native-localize@npm:3.2.1"
+  peerDependencies:
+    react: ">=18.1.0"
+    react-native: ">=0.70.0"
+    react-native-macos: ">=0.70.0"
+  peerDependenciesMeta:
+    react-native-macos:
+      optional: true
+  checksum: 35708cb792ba67db6b3e67a9430eec9dfc665b96d1c9c15e9e4729cf0b24d32880b3b9a9743a232da817e1ab8a8159528ba07354fbc3ff879b1b6b2c92cb8fc8
   languageName: node
   linkType: hard
 

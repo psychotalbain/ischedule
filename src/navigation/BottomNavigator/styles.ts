@@ -6,12 +6,11 @@ const styles = (theme: ITheme) =>
   StyleSheet.create({
     TabBar: {
       height: 60,
-      // width: '60%',
       backgroundColor: theme.colors.primary,
       position: 'absolute',
       alignSelf: 'center',
-      left: '20%',
-      right: '20%',
+      left: 20,
+      right: 20,
       bottom: 30,
       borderRadius: 40,
       borderTopWidth: 0,

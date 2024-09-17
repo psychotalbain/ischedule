@@ -21,7 +21,6 @@ export interface IScheduleContext extends IScheduleData {
   handleAddTask: () => void
   handleEditTask: (task: ITask) => void
   handleCompleteTask: (task: ITask) => void
-  handleTheme: () => void
 }
 
 export interface IScheduleCompleteContext extends IScheduleData {

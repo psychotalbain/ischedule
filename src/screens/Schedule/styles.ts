@@ -1,8 +1,9 @@
-import { View } from 'react-native'
+import { FlatList, FlatListProps, View } from 'react-native'
 import styled from 'styled-components'
 import { styled as styledNative } from 'styled-components/native'
 
 import { TextComponent, ButtonComponent } from '@components'
+import { ITask } from '@types'
 
 export const Container = styled(View)`
   flex: 1;
@@ -11,7 +12,7 @@ export const Container = styled(View)`
 `
 
 export const Title = styled(TextComponent)`
-  margin-vertical: ${({ theme }) => theme.spacing.lg}px;
+  margin-vertical: ${({ theme }) => theme.spacing.md}px;
 `
 
 export const Button = styled(ButtonComponent)`
@@ -27,3 +28,10 @@ export const TaskItem = styledNative.View`
 export const TaskTitle = styled(TextComponent)`
   margin-vertical: ${({ theme }) => theme.spacing.xs}px;
 `
+
+export const List = styled(
+  FlatList as React.ComponentType<FlatListProps<ITask>>
+).attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: { paddingBottom: 80 }
+})``

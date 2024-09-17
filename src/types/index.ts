@@ -1,4 +1,5 @@
 export * from './card'
+export * from './config'
 export * from './icon'
 export * from './input'
 export * from './react'

@@ -18,12 +18,14 @@ const BottomNavigator: React.FC = () => {
   const styles = dynamicStyles(theme)
   const icons = useMemo(() => {
     return {
+      Config: 'ninja',
       Schedule: 'calendar-check',
       ScheduledTasks: 'check-all'
     } as const
   }, [])
   const titles = useMemo(() => {
     return {
+      Config: t('screen.config.title'),
       Schedule: t('screen.schedule.title'),
       ScheduledTasks: t('screen.scheduleTasks.title')
     } as const
@@ -77,6 +79,7 @@ const BottomNavigator: React.FC = () => {
         })}>
         <Tab.Screen name="Schedule" component={Screens.Schedule} />
         <Tab.Screen name="ScheduledTasks" component={Screens.ScheduledTasks} />
+        <Tab.Screen name="Config" component={Screens.Config} />
       </Tab.Navigator>
     </NavigationContainer>
   )

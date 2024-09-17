@@ -1,13 +1,20 @@
 {
   "screen": {
+    "config": {
+      "title": "Extras",
+      "description": "Ajuste algumas opções do aplicativo. Lembre-se: nesta versão, todas as configurações são temporárias.",
+      "toggle": "Mudar tema",
+      "language": "Mudar idioma"
+    },
     "schedule": {
       "title": "Agenda",
-      "addNew": "Adicionar nova tarefa",
-      "toggle": "Alternar tema"
+      "description": "Adicione novas tarefas para organizar seu dia!",
+      "addNew": "Adicionar nova tarefa"
     },
     "scheduleTasks": {
-      "title": "Finalizadas",
-      "empty": "Nenhuma tarefa foi concluída até o momento"
+      "title": "Tarefas Concluídas",
+      "description": "Veja as tarefas que você já completou e, se preferir, exclua-as.",
+      "empty": "Nenhuma tarefa concluída até agora."
     }
   },
   "bottomSheet": {
@@ -15,34 +22,34 @@
       "title": "Vamos criar sua próxima tarefa?",
       "fields": {
         "title": {
-          "label": "Nome",
-          "placeholder": "Insira o nome da tarefa"
+          "label": "Título",
+          "placeholder": "Digite o título da tarefa"
         },
         "description": {
           "label": "Descrição",
-          "placeholder": "Insira a descrição da tarefa"
+          "placeholder": "Digite a descrição da tarefa"
         }
       }
     },
     "edit": {
-      "title": "Edite sua tarefa",
+      "title": "Editar Tarefa",
       "fields": {
         "title": {
-          "label": "Nome",
-          "placeholder": "Insira o nome da tarefa"
+          "label": "Título",
+          "placeholder": "Digite o título da tarefa"
         },
         "description": {
           "label": "Descrição",
-          "placeholder": "Insira a descrição da tarefa"
+          "placeholder": "Digite a descrição da tarefa"
         }
       }
     },
     "complete": {
-      "title": "Concluir tarefa",
+      "title": "Concluir Tarefa",
       "description": "Tem certeza de que deseja marcar esta tarefa como concluída?"
     },
     "remove": {
-      "title": "Remover tarefa",
+      "title": "Excluir Tarefa",
       "description": "Tem certeza de que deseja excluir esta tarefa?"
     }
   },
@@ -54,5 +61,5 @@
     "save": "Salvar",
     "cancel": "Cancelar"
   },
-  "load": "..."
+  "load": "Carregando..."
 }
