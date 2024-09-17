@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react'
+import { formatDateFromISO } from '@utils'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { ICardProps } from '@types'
@@ -15,16 +16,22 @@ const CardComponent: React.FC<Omit<ICardProps, 'children'>> = ({
   onDelete
 }) => {
   const { t } = useTranslation()
-
+  const [creationDate, setCreationDate] = useState(creation)
   const renderStatusBadge = useMemo(() => {
     return <S.StatusBadge variant={variant} icon="calendar-check" />
   }, [variant])
+
+  useEffect(() => {
+    const formattedDate = formatDateFromISO(creation, 'DD/MM/YYYY HH:mm')
+    setCreationDate(formattedDate)
+    return () => {}
+  }, [creationDate])
 
   return (
     <S.Card>
       <S.Card.Title
         title={title}
-        subtitle={creation}
+        subtitle={creationDate}
         left={() => renderStatusBadge}
       />
       <S.Card.Content>
