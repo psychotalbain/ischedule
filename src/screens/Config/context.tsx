@@ -1,9 +1,9 @@
-import { useTheme } from '@theme'
-import { ELangCode } from '@utils/languages/languageUtils'
 import React, { createContext, useCallback, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { useTheme } from '@theme'
 import { IReactFCWithChildren, IConfigContext } from '@types'
+import { ELangCode } from '@utils/languages/languageUtils'
 
 const ConfigContext = createContext<IConfigContext | undefined>(undefined)
 

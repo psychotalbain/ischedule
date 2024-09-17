@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
-import Screens from '@screens'
-import { useTheme } from '@theme'
 import React, { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import * as C from '@components'
+import Screens from '@screens'
+import { useTheme } from '@theme'
 
 import dynamicStyles from './styles'
 
@@ -14,8 +14,8 @@ const Tab = createBottomTabNavigator()
 const BottomNavigator: React.FC = () => {
   const { t } = useTranslation()
   const { theme, themeNavigator } = useTheme()
-
   const styles = dynamicStyles(theme)
+
   const icons = useMemo(() => {
     return {
       Config: 'ninja',

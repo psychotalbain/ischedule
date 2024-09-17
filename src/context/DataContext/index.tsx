@@ -6,7 +6,9 @@ import React, {
   useEffect,
   useCallback
 } from 'react'
+import { useTranslation } from 'react-i18next'
 
+import { useToast } from '@hooks'
 import { IReactFCWithChildren, IScheduleDataContext, ITask } from '@types'
 
 const STORAGE_KEY = '@data_tasks'
@@ -14,6 +16,8 @@ const STORAGE_KEY = '@data_tasks'
 const DataContext = createContext<IScheduleDataContext | undefined>(undefined)
 
 export const DataProvider: IReactFCWithChildren = ({ children }) => {
+  const { t } = useTranslation()
+  const { showSuccess, showError } = useToast()
   const [tasks, setTasks] = useState<ITask[]>([])
 
   useEffect(() => {
@@ -49,6 +53,7 @@ export const DataProvider: IReactFCWithChildren = ({ children }) => {
 
         const updatedTasks = [...prevTasks, task]
         saveTasks(updatedTasks)
+        showSuccess(t('toast.add.title'), t('toast.add.description'))
         return updatedTasks
       })
     },
@@ -60,6 +65,7 @@ export const DataProvider: IReactFCWithChildren = ({ children }) => {
       setTasks(prevTasks => {
         const updatedTasks = prevTasks.map(t => (t.id === task.id ? task : t))
         saveTasks(updatedTasks)
+        showSuccess(t('toast.edit.title'), t('toast.edit.description'))
         return updatedTasks
       })
     },
@@ -71,6 +77,7 @@ export const DataProvider: IReactFCWithChildren = ({ children }) => {
       setTasks(prevTasks => {
         const updatedTasks = prevTasks.filter(t => t.id !== taskId)
         saveTasks(updatedTasks)
+        showError(t('toast.remove.title'), t('toast.remove.description'))
         return updatedTasks
       })
     },

@@ -1,13 +1,12 @@
-import { BottomNavigator } from '@navigation'
-import ThemeProvider from '@theme'
-import { i18n } from '@utils'
 import React, { useEffect } from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
-import { BottomSheetProvider } from '@components/BottomSheet/context/index'
-import BottomSheetComponent from '@components/BottomSheet/index'
+import * as C from '@components'
 import { DataProvider } from '@context'
+import { BottomNavigator } from '@navigation'
+import ThemeProvider from '@theme'
+import { i18n } from '@utils'
 
 import styles from './styles'
 
@@ -25,11 +24,12 @@ const App: React.FC = () => {
       <ThemeProvider>
         <GestureHandlerRootView style={styles.container}>
           <DataProvider>
-            <BottomSheetProvider>
-              <BottomSheetComponent>
+            <C.BottomSheetProvider>
+              <C.BottomSheetComponent>
                 <BottomNavigator />
-              </BottomSheetComponent>
-            </BottomSheetProvider>
+                <C.ToastComponent />
+              </C.BottomSheetComponent>
+            </C.BottomSheetProvider>
           </DataProvider>
         </GestureHandlerRootView>
       </ThemeProvider>

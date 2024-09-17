@@ -2,8 +2,9 @@
  * @format
  */
 
-import Screens from '@screens'
 import { AppRegistry } from 'react-native'
+
+import Screens from '@screens'
 
 import { name as appName } from './app.json'
 

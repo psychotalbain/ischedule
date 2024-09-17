@@ -61,5 +61,19 @@
     "save": "Salvar",
     "cancel": "Cancelar"
   },
+  "toast": {
+    "add": {
+      "title": "Adicionado",
+      "description": "Tafera criada com sucesso"
+    },
+    "edit": {
+      "title": "Salvo",
+      "description": "Tafera editada com sucesso"
+    },
+    "remove": {
+      "title": "Excluido",
+      "description": "Tafera excluido com sucesso!"
+    }
+  },
   "load": "Carregando..."
 }

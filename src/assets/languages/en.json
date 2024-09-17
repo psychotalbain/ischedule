@@ -61,5 +61,19 @@
     "save": "Save",
     "cancel": "Cancel"
   },
+  "toast": {
+    "add": {
+      "title": "Added",
+      "description": "Task created successfully"
+    },
+    "edit": {
+      "title": "Saved",
+      "description": "Task edited successfully"
+    },
+    "remove": {
+      "title": "Deleted",
+      "description": "Task deleted successfully"
+    }
+  },
   "load": "Loading..."
 }

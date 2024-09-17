@@ -1,6 +1,7 @@
 import Assets from '@assets'
-import baseTheme from '@theme/base'
 import { MD3LightTheme, MD3DarkTheme } from 'react-native-paper'
+
+import baseTheme from '@theme/base'
 
 const lightTheme = {
   ...MD3LightTheme,
