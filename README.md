@@ -1,6 +1,17 @@
 # iSchedule
 
-iSchedule é um aplicativo de agendamento de tarefas desenvolvido com React Native. O objetivo deste aplicativo é fornecer uma interface intuitiva para listar, adicionar, editar, apagar e marcar tarefas como concluídas. Os dados são armazenados localmente usando o AsyncStorage.
+iSchedule é um aplicativo de agendamento de tarefas desenvolvido com React Native. O objetivo do app é fornecer uma interface intuitiva para listar, adicionar, editar, apagar e marcar tarefas como concluídas, com os dados armazenados localmente usando AsyncStorage.
+
+## Funcionalidades
+
+- Listar tarefas agendadas e concluídas.
+- Adicionar, editar e remover tarefas.
+- Marcar tarefas como concluídas.
+- Persistência de dados usando AsyncStorage.
+- Interface responsiva e amigável com React Native Paper.
+- Suporte a temas claros e escuros.
+- Suporte a internacionalização com i18next.
+- Notificações de status usando Toast Messages.
 
 ## Estrutura do Projeto
 
@@ -9,29 +20,33 @@ A estrutura do projeto está organizada da seguinte maneira:
 - **`src/`**: Contém o código-fonte do aplicativo.
   - **`assets/`**: Imagens, ícones e outros recursos estáticos.
   - **`components/`**: Componentes reutilizáveis, como BottomSheet e Modal.
-  - **`screens/`**: Telas principais do aplicativo, como a tela de tarefas agendadas e concluídas.
-  - **`services/`**: Serviços para manipulação de dados, incluindo persistência usando AsyncStorage.
+  - **`screens/`**: Telas principais do aplicativo, como tarefas agendadas e concluídas.
+  - **`services/`**: Serviços para manipulação de dados, incluindo persistência com AsyncStorage.
   - **`hooks/`**: Hooks personalizados para encapsular lógica de estado e operações.
   - **`utils/`**: Funções utilitárias e constantes.
-  - **`navigation/`**: Configuração de navegação, incluindo o bottom navigator.
+  - **`navigation/`**: Configuração de navegação, incluindo o Bottom Navigator.
   - **`context/`**: Contextos para gerenciamento de estado global.
-  - **`types/`**: Definições de tipos TypeScript, se estiver usando.
+  - **`types/`**: Definições de tipos TypeScript.
 
-## Tecnologias Usadas
+## Bibliotecas Utilizadas
 
 - **React Native**: Framework para desenvolvimento de aplicativos móveis.
-- **React Navigation**: Biblioteca para navegação entre telas e gerenciamento de navegação.
-- **React Native Bottom Sheet**: Biblioteca para criar bottom sheets interativos.
-- **AsyncStorage**: Biblioteca para armazenamento local persistente de dados.
-- **TypeScript**: Superset do JavaScript para uma melhor tipagem e desenvolvimento mais seguro.
-- **Jest**: Framework de testes para garantir a qualidade do código.
-- **ESLint e Prettier**: Ferramentas para linting e formatação de código.
+- **React Navigation**: Navegação entre telas e gerenciamento de navegação.
+- **React Native Bottom Sheet**: Criação de bottom sheets interativos.
+- **AsyncStorage**: Armazenamento local persistente de dados.
+- **TypeScript**: Tipagem estática para um desenvolvimento mais seguro.
+- **React Native Paper**: Componentes UI estilizados e consistentes.
+- **Styled-components**: Estilização com suporte a temas.
+- **i18next & react-i18next**: Internacionalização e localização.
+- **React Native Localize**: Gerenciamento de localização.
+- **Moment.js**: Manipulação de datas e horários.
+- **React Native Toast Message**: Exibição de mensagens de notificação.
 
 ## Comandos Disponíveis
 
 - **`yarn android`**: Inicia o aplicativo no emulador ou dispositivo Android.
 - **`yarn ios`**: Inicia o aplicativo no simulador iOS.
-- **`yarn lint`**: Executa o linting do código fonte.
+- **`yarn lint`**: Executa o linting do código.
 - **`yarn start`**: Inicia o servidor de desenvolvimento React Native.
 - **`yarn test`**: Executa os testes com Jest.
 
@@ -39,7 +54,7 @@ A estrutura do projeto está organizada da seguinte maneira:
 
 1. **Instalar Dependências**:
 
-   Após clonar o repositório, instale as dependências do projeto:
+   Após clonar o repositório, instale as dependências:
 
    ```bash
    yarn install
@@ -47,7 +62,7 @@ A estrutura do projeto está organizada da seguinte maneira:
 
 2. **Configuração do Ambiente**:
 
-   Configure as variáveis de ambiente e as ferramentas necessárias, como o JDK e o Android SDK.
+   Configure as variáveis de ambiente e as ferramentas necessárias, como JDK e Android SDK.
 
 3. **Executar o Aplicativo**:
 
@@ -63,27 +78,31 @@ A estrutura do projeto está organizada da seguinte maneira:
    yarn ios
    ```
 
-## Estrutura de Pastas
+## Prints do Aplicativo
 
-- **`src/assets/`**: Recursos estáticos, como imagens e ícones.
-- **`src/components/`**: Componentes reutilizáveis do aplicativo.
-- **`src/screens/`**: Telas principais do aplicativo.
-- **`src/services/`**: Manipulação de dados e serviços.
-- **`src/hooks/`**: Hooks personalizados.
-- **`src/utils/`**: Funções e constantes utilitárias.
-- **`src/navigation/`**: Configuração de navegação.
-- **`src/context/`**: Contextos para gerenciamento de estado.
-- **`src/types/`**: Definições de tipos TypeScript.
+Abaixo estão as capturas de tela do iSchedule para ilustrar o funcionamento e a interface do aplicativo:
 
-## Contribuindo
+<details>
+  <summary>Ver capturas de tela</summary>
 
-Se você deseja contribuir para o projeto, siga estas etapas:
+  <p float="left">
+    <img src="src/assets/screenshots/print-01.png" width="200" />
+    <img src="src/assets/screenshots/print-02.png" width="200" />
+    <img src="src/assets/screenshots/print-03.png" width="200" />
+    <img src="src/assets/screenshots/print-04.png" width="200" />
+    <img src="src/assets/screenshots/print-05.png" width="200" />
+    <img src="src/assets/screenshots/print-06.png" width="200" />
+    <img src="src/assets/screenshots/print-07.png" width="200" />
+    <img src="src/assets/screenshots/print-08.png" width="200" />
+    <img src="src/assets/screenshots/print-09.png" width="200" />
+    <img src="src/assets/screenshots/print-10.png" width="200" />
+    <img src="src/assets/screenshots/print-11.png" width="200" />
+    <img src="src/assets/screenshots/print-12.png" width="200" />
+    <img src="src/assets/screenshots/print-13.png" width="200" />
+    <img src="src/assets/screenshots/print-14.png" width="200" />
+  </p>
 
-1. Faça um fork do repositório.
-2. Crie uma branch para suas alterações (`git checkout -b feature/your-feature`).
-3. Faça commit das suas alterações (`git commit -am 'Add new feature'`).
-4. Faça push para a branch (`git push origin feature/your-feature`).
-5. Crie um Pull Request.
+</details>
 
 ## Licença
 
