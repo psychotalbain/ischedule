@@ -109,12 +109,9 @@ Abaixo estão capturas de tela e vídeo do iSchedule que ilustram o funcionament
 
 <details>
   <summary>Ver vídeo</summary>
-  
-  <video width="320" height="240" controls>
-    <source src="src/movie/movie.mp4" type="video/mp4">
-    Seu navegador não suporta a tag de vídeo.
-  </video>
 
+  [<img src="src/assets/screenshots/print-01.png" width="200">](https://youtube.com/shorts/MgGHl7PxdQU?feature=share)
+  
 </details>
 
 ## Licença
