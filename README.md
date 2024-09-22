@@ -1,60 +1,60 @@
 # iSchedule
 
-iSchedule é um aplicativo de agendamento de tarefas desenvolvido com React Native. O objetivo do app é fornecer uma interface intuitiva para listar, adicionar, editar, apagar e marcar tarefas como concluídas, com os dados armazenados localmente usando AsyncStorage.
+iSchedule é um aplicativo de agendamento de tarefas desenvolvido com React Native. O objetivo do app é fornecer uma interface simples e intuitiva para listar, adicionar, editar, apagar e marcar tarefas como concluídas, com armazenamento local usando AsyncStorage.
 
 ## Funcionalidades
 
-- Listar tarefas agendadas e concluídas.
+- Listagem de tarefas agendadas e concluídas.
 - Adicionar, editar e remover tarefas.
 - Marcar tarefas como concluídas.
-- Persistência de dados usando AsyncStorage.
-- Interface responsiva e amigável com React Native Paper.
-- Suporte a temas claros e escuros.
+- Persistência de dados local com AsyncStorage.
+- Interface responsiva e estilizada com React Native Paper.
+- Suporte a temas claro e escuro.
 - Suporte a internacionalização com i18next.
-- Notificações de status usando Toast Messages.
+- Notificações de status utilizando Toast Messages.
 
 ## Estrutura do Projeto
 
-A estrutura do projeto está organizada da seguinte maneira:
+A estrutura do projeto está organizada da seguinte forma:
 
-- **`src/`**: Contém o código-fonte do aplicativo.
+- **`src/`**: Código-fonte do aplicativo.
   - **`assets/`**: Imagens, ícones e outros recursos estáticos.
   - **`components/`**: Componentes reutilizáveis, como BottomSheet e Modal.
   - **`screens/`**: Telas principais do aplicativo, como tarefas agendadas e concluídas.
-  - **`services/`**: Serviços para manipulação de dados, incluindo persistência com AsyncStorage.
+  - **`services/`**: Serviços para manipulação de dados e persistência com AsyncStorage.
   - **`hooks/`**: Hooks personalizados para encapsular lógica de estado e operações.
   - **`utils/`**: Funções utilitárias e constantes.
   - **`navigation/`**: Configuração de navegação, incluindo o Bottom Navigator.
-  - **`context/`**: Contextos para gerenciamento de estado global.
+  - **`context/`**: Gerenciamento de estado global via Context API.
   - **`types/`**: Definições de tipos TypeScript.
 
 ## Bibliotecas Utilizadas
 
 - **React Native**: Framework para desenvolvimento de aplicativos móveis.
-- **React Navigation**: Navegação entre telas e gerenciamento de navegação.
+- **React Navigation**: Biblioteca para navegação entre telas.
 - **React Native Bottom Sheet**: Criação de bottom sheets interativos.
-- **AsyncStorage**: Armazenamento local persistente de dados.
-- **TypeScript**: Tipagem estática para um desenvolvimento mais seguro.
-- **React Native Paper**: Componentes UI estilizados e consistentes.
-- **Styled-components**: Estilização com suporte a temas.
-- **i18next & react-i18next**: Internacionalização e localização.
+- **AsyncStorage**: Armazenamento local de dados.
+- **TypeScript**: Superset de JavaScript com tipagem estática.
+- **React Native Paper**: Componentes UI prontos e consistentes.
+- **Styled-components**: Estilização com suporte a temas dinâmicos.
+- **i18next & react-i18next**: Internacionalização e suporte a múltiplos idiomas.
 - **React Native Localize**: Gerenciamento de localização.
 - **Moment.js**: Manipulação de datas e horários.
-- **React Native Toast Message**: Exibição de mensagens de notificação.
+- **React Native Toast Message**: Exibição de notificações Toast.
 
 ## Comandos Disponíveis
 
-- **`yarn android`**: Inicia o aplicativo no emulador ou dispositivo Android.
-- **`yarn ios`**: Inicia o aplicativo no simulador iOS.
-- **`yarn lint`**: Executa o linting do código.
+- **`yarn android`**: Executa o aplicativo em um emulador ou dispositivo Android.
+- **`yarn ios`**: Executa o aplicativo em um simulador iOS.
+- **`yarn lint`**: Executa o linting do código para detectar problemas de formatação.
 - **`yarn start`**: Inicia o servidor de desenvolvimento React Native.
-- **`yarn test`**: Executa os testes com Jest.
+- **`yarn test`**: Executa os testes automatizados com Jest.
 
 ## Configuração Inicial
 
 1. **Instalar Dependências**:
 
-   Após clonar o repositório, instale as dependências:
+   Após clonar o repositório, execute o seguinte comando para instalar as dependências do projeto:
 
    ```bash
    yarn install
@@ -62,27 +62,28 @@ A estrutura do projeto está organizada da seguinte maneira:
 
 2. **Configuração do Ambiente**:
 
-   Configure as variáveis de ambiente e as ferramentas necessárias, como JDK e Android SDK.
+   Certifique-se de ter o JDK e Android SDK configurados corretamente, além de outras variáveis de ambiente necessárias.
 
 3. **Executar o Aplicativo**:
 
-   Para iniciar o aplicativo no emulador ou dispositivo, use os comandos:
+   Para rodar o aplicativo em um dispositivo ou emulador Android, execute:
 
    ```bash
    yarn android
    ```
 
-   ou
+   Para rodar no simulador iOS, use:
 
    ```bash
    yarn ios
    ```
 
-## Prints do Aplicativo
+## Prints e Gravação do Aplicativo
 
-Abaixo estão as capturas de tela do iSchedule para ilustrar o funcionamento e a interface do aplicativo:
+Abaixo estão capturas de tela e vídeo do iSchedule que ilustram o funcionamento e a interface do aplicativo:
 
 <details>
+
   <summary>Ver capturas de tela</summary>
 
   <p float="left">
@@ -101,6 +102,18 @@ Abaixo estão as capturas de tela do iSchedule para ilustrar o funcionamento e a
     <img src="src/assets/screenshots/print-13.png" width="200" />
     <img src="src/assets/screenshots/print-14.png" width="200" />
   </p>
+
+</details>
+
+<br>
+
+<details>
+  <summary>Ver vídeo</summary>
+  
+  <video width="320" height="240" controls>
+    <source src="src/movie/movie.mp4" type="video/mp4">
+    Seu navegador não suporta a tag de vídeo.
+  </video>
 
 </details>
 
