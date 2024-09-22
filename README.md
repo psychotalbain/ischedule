@@ -110,7 +110,7 @@ Abaixo estão capturas de tela e vídeo do iSchedule que ilustram o funcionament
 <details>
   <summary>Ver vídeo</summary>
 
-  [<img src="src/assets/screenshots/print-01.png" width="200">](https://youtube.com/shorts/MgGHl7PxdQU?feature=share)
+  [src/assets/movie/movie.gif](https://youtube.com/shorts/MgGHl7PxdQU?feature=share)
   
 </details>
 
