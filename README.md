@@ -109,8 +109,9 @@ Abaixo estão capturas de tela e vídeo do iSchedule que ilustram o funcionament
 
 <details>
   <summary>Ver vídeo</summary>
-
-  [src/assets/movie/movie.gif](https://youtube.com/shorts/MgGHl7PxdQU?feature=share)
+  <a href="https://youtube.com/shorts/MgGHl7PxdQU?feature=share">
+    <img src="https://raw.githubusercontent.com/psychotalbain/ischedule/main/src/assets/movie/movie.gif" alt="Movie GIF" width="200">
+  </a>
   
 </details>
 
